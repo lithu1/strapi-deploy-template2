@@ -6,40 +6,78 @@
   <title>Welcome to My Static Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Roboto', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
       background: linear-gradient(to right, #4facfe, #00f2fe);
       color: #fff;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      text-align: center;
       min-height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
-    header { margin-top: 50px; }
-    h1 { font-size: 3rem; margin-bottom: 10px; }
-    p { font-size: 1.2rem; margin-bottom: 30px; }
+
+    header {
+      max-width: 800px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
     button {
       background-color: #fff;
       color: #00c6ff;
       font-size: 1rem;
       border: none;
-      padding: 15px 30px;
+      padding: 12px 24px;
       border-radius: 25px;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: background-color 0.3s ease;
     }
-    button:hover { background-color: #e6f7ff; }
+
+    button:hover {
+      background-color: #e6f7ff;
+    }
+
     footer {
       margin-top: auto;
       padding: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #ccefff;
     }
-  </style> 
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
