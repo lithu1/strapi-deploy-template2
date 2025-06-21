@@ -3,90 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to My Static Website</title>
+  <title>My DevOps Static Site</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #1fa2ff, #12d8fa, #a6ffcb);
+      color: #333;
     }
 
     header {
-      max-width: 800px;
-      margin-top: 50px;
+      background-color: #ffffffcc;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    h1 {
+    header h1 {
       font-size: 2.5rem;
-      margin-bottom: 15px;
+      color: #0077cc;
     }
 
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      line-height: 1.6;
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
-    button {
-      background-color: #fff;
-      color: #00c6ff;
-      font-size: 1rem;
+    .dropdown {
+      position: relative;
+      margin: 10px;
+    }
+
+    .dropdown button {
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 16px;
+      font-size: 16px;
       border: none;
-      padding: 12px 24px;
-      border-radius: 25px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
-    button:hover {
-      background-color: #e6f7ff;
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
     }
 
     footer {
-      margin-top: auto;
+      margin-top: 40px;
       padding: 20px;
-      font-size: 0.85rem;
-      color: #ccefff;
+      background: #0077cc;
+      color: white;
+      text-align: center;
     }
 
     @media (max-width: 600px) {
-      h1 {
+      header h1 {
         font-size: 1.8rem;
       }
 
-      p {
-        font-size: 1rem;
-      }
-
-      button {
-        padding: 10px 20px;
-        font-size: 0.95rem;
+      .dropdown button {
+        font-size: 14px;
+        padding: 8px 12px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🚀 Welcome to My Static Website!</h1>
-    <p>This site is hosted on <strong>AWS S3</strong> with a CDN via <strong>Cloudflare</strong><br> and deployed automatically using <strong>GitHub Actions</strong>.</p>
-    <button onclick="alert('Thanks for visiting!')">Click Me!</button>
-  </header>
-  <footer>
-    &copy; 2025 Made with ❤️ for my DevOps Project
-  </footer>
+
+<header>
+  <h1>🚀 My DevOps Project Site</h1>
+</header>
+
+<nav>
+  <div class="dropdown">
+    <button>About</button>
+    <div class="dropdown-content">
+      <a href="#">The Project</a>
+      <a href="#">Tools Used</a>
+      <a href="#">GitHub Repo</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button>Docs</button>
+    <div class="dropdown-content">
+      <a href="#">CI/CD Pipeline</a>
+      <a href="#">S3 Hosting</a>
+      <a href="#">Cloudflare Config</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button>Contact</button>
+    <div class="dropdown-content">
+      <a href="#">Email</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <h2>Welcome!</h2>
+  <p>This site is hosted on AWS S3 and styled to work beautifully on any device.</p>
+  <p>Click the menus above to explore the project details.</p>
+</main>
+
+<footer>
+  &copy; 2025 My DevOps Project. All rights reserved.
+</footer>
+
 </body>
 </html>
