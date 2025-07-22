@@ -1,16 +1,21 @@
-# Dockerfile
+# Use official Node.js 18 image as base
 FROM node:18
 
+# Set working directory inside container
 WORKDIR /app
 
+# Copy only package.json and package-lock.json first
 COPY package.json ./
-COPY yarn.lock ./
-RUN yarn install
+COPY package-lock.json ./
 
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
 COPY . .
 
-RUN yarn build
-
+# Expose the default Strapi port
 EXPOSE 1337
 
-CMD ["yarn", "start"]
+# Start the Strapi app
+CMD ["npm", "start"]
